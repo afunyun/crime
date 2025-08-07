@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ever wanted your clock to be less readable?</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>crime</h1>
+      </header>
+
+      <main>
+        <div class="clock-display">
+          <div class="cron-string">
+            <span id="cronTime"><%= cronTime.cronString %></span>
+          </div>
+
+          <div class="cron-breakdown">
+            <div class="field">
+              <div class="value" id="minute"><%= cronTime.minute %></div>
+              <div class="label">minute</div>
+            </div>
+            <div class="field">
+              <div class="value" id="hour"><%= cronTime.hour %></div>
+              <div class="label">hour</div>
+            </div>
+            <div class="field">
+              <div class="value" id="dayOfMonth">
+                <%= cronTime.dayOfMonth %>
+              </div>
+              <div class="label">day</div>
+            </div>
+            <div class="field">
+              <div class="value" id="month"><%= cronTime.month %></div>
+              <div class="label">month</div>
+            </div>
+            <div class="field">
+              <div class="value" id="dayOfWeek"><%= cronTime.dayOfWeek %></div>
+              <div class="label">weekday</div>
+            </div>
+          </div>
+
+          <div class="readable-time">
+            <p>
+              Current time:
+              <span id="readableTime">
+                <%= cronTime.readable.hour %>:<%= cronTime.readable.minute %>
+                (<%= cronTime.readable.dayOfWeek %>)
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div class="info">
+          <p><code>minute hour day month weekday</code></p>
+          <ul>
+            <li><strong>minute:</strong> 0-59</li>
+            <li><strong>hour:</strong> 0-23</li>
+            <li><strong>day:</strong> 1-31</li>
+            <li><strong>month:</strong> 1-12</li>
+            <li><strong>weekday:</strong> 0-6</li>
+          </ul>
+          <p class="crime-note">
+            <em>crime is fine as long as they don't know when you did it</em>
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <script src="/js/script.js"></script>
+  </body>
+</html>
