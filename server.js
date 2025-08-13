@@ -25,7 +25,6 @@ function getCurrentCronTime() {
     dayOfMonth: dayOfMonth,
     month: month,
     dayOfWeek: dayOfWeek,
-    // Extended (Quartz-style) 6-field cron with seconds
     cronString: `${second} ${minute} ${hour} ${dayOfMonth} ${month} ${dayOfWeek}`,
     readable: {
       second: second.toString().padStart(2, "0"),
