@@ -11,4 +11,3 @@ A clock that outputs the current time using (standard except for seconds which a
 ## License
 
 MIT
-
