@@ -7,6 +7,10 @@ function updateClock() {
       cronTimeElement.classList.add("updating");
       setTimeout(() => cronTimeElement.classList.remove("updating"), 500);
 
+      // seconds (new field)
+      const secEl = document.getElementById("second");
+      if (secEl) secEl.textContent = data.second;
+
       document.getElementById("minute").textContent = data.minute;
       document.getElementById("hour").textContent = data.hour;
       document.getElementById("dayOfMonth").textContent = data.dayOfMonth;
@@ -15,7 +19,7 @@ function updateClock() {
 
       document.getElementById(
         "readableTime"
-      ).textContent = `${data.readable.hour}:${data.readable.minute} (${data.readable.dayOfWeek})`;
+      ).textContent = `${data.readable.hour}:${data.readable.minute}:${data.readable.second} (${data.readable.dayOfWeek})`;
     })
     .catch((error) => {
       console.error("Error updating clock:", error);

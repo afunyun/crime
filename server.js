@@ -11,6 +11,7 @@ app.use(express.static(path.join(__dirname, "public")));
 function getCurrentCronTime() {
   const now = new Date();
 
+  const second = now.getSeconds();
   const minute = now.getMinutes();
   const hour = now.getHours();
   const dayOfMonth = now.getDate();
@@ -18,13 +19,16 @@ function getCurrentCronTime() {
   const dayOfWeek = now.getDay();
 
   return {
+    second: second,
     minute: minute,
     hour: hour,
     dayOfMonth: dayOfMonth,
     month: month,
     dayOfWeek: dayOfWeek,
-    cronString: `${minute} ${hour} ${dayOfMonth} ${month} ${dayOfWeek}`,
+    // Extended (Quartz-style) 6-field cron with seconds
+    cronString: `${second} ${minute} ${hour} ${dayOfMonth} ${month} ${dayOfWeek}`,
     readable: {
+      second: second.toString().padStart(2, "0"),
       minute: minute.toString().padStart(2, "0"),
       hour: hour.toString().padStart(2, "0"),
       dayOfMonth: dayOfMonth.toString().padStart(2, "0"),

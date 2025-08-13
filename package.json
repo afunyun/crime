@@ -1,6 +1,6 @@
 {
   "name": "crime",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "CRIME: CRon tIME - A clock that displays time in cron syntax format",
   "main": "server.js",
   "scripts": {
