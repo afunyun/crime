@@ -51,7 +51,9 @@
               <div class="label">weekday</div>
               <div class="label">0-6</div>
           </div>
+        </div>
 
+        <div class="info">
           <div class="readable-time">
             <p>
               Current time:
@@ -59,15 +61,10 @@
                 <%= cronTime.readable.hour %>:<%= cronTime.readable.minute
                 %>:<%= cronTime.readable.second %> (<%=
                 cronTime.readable.dayOfWeek %>)
-              </span>
+              </span><br>
+              <span style="font-size:0.55em;">seconds are non standard but also clocks are kinda bad without them</span>
             </p>
           </div>
-        </div>
-
-        <div class="info">
-          <p>
-            seconds are non standard but also clocks are kinda bad without them
-          </p>
         </div>
       </main>
     </div>
